@@ -83,4 +83,4 @@ jobs:
       - name: Output Report
         run: |
           echo "Report Error"
-          echo ${{toJson(github)}}
+          echo "${{toJson(github)}}"
