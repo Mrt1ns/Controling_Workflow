@@ -14,7 +14,7 @@ on:
 jobs:
     Deploy:
         outputs:
-            outcome: ${{steps.set-result.outputs.steps-result}}
+            outcome: ${{steps.set-result.outputs.step-result}}
         runs-on: ubuntu-latest
         steps:
             - name: Download a Build Artifact
@@ -28,5 +28,5 @@ jobs:
             - name: "Deploying Code"
               run: echo "Deploying Code"
             - name: Set Result Output
-              run: echo "set-result=sucess" >> $GITHU_OUTPUT
+              run: echo "step-result=sucess" >> $GITHU_OUTPUT
         
