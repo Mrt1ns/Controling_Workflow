@@ -12,7 +12,7 @@ jobs:
             include:
                 - operation-system: ubuntu-latest
                   node-modules: 18
-            exlude:
+            exclude:
                 - operation-system: ubuntu-latest
                   node-modules: 12
     runs-on: ${{matrix.operation-system}}
