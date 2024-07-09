@@ -74,6 +74,12 @@ jobs:
     #secrets:
     #  some-secret:
     #    required: false
+  print-result:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Deploy Output
+        run: echo ${{needs.deploy.outputs.result}}
   report:
     needs: [lint, deploy]
     if: failure()
