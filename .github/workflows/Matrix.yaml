@@ -4,9 +4,10 @@ on:
     branches: [master]
 jobs:
   Build:
+    continue-on-error: True
     strategy:
         matrix:
-            operation-system: [ubuntu-latest]
+            operation-system: [ubuntu-latest, windows-latest]
             node-modules: [12,14,18]
     runs-on: ${{matrix.operation-system}}
     steps:
