@@ -8,7 +8,13 @@ jobs:
     strategy:
         matrix:
             operation-system: [ubuntu-latest, windows-latest]
-            node-modules: [12,14,18]
+            node-modules: [12,14,16]
+            include:
+                - operation-system: ubuntu-latest
+                  node-modules: 18
+            exlude:
+                - operation-system: ubuntu-latest
+                  node-modules: 12
     runs-on: ${{matrix.operation-system}}
     steps:
       - name: Get-Code
